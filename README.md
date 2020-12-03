@@ -17,14 +17,17 @@
   * ##### 설치 : sudo pip3 install face_recognition
 ---
 ## 이미지 얼굴 인식
-* #### 비디오를 저장하지 않을 경우
-  * webcam : sudo python3 yolo_object_counting.py
-    * 예) sudo python3 yolo_object_counting.py
-  * video : sudo python3 yolo_object_counting.py --input 비디오 경로
-    * 예) sudo python3 yolo_object_counting.py --input test_video.mp4
-* #### 비디오를 저장할 경우
-  * webcam : sudo python3 yolo_object_counting.py --output 저장할 비디오 경로
-    * 예) sudo python3 yolo_object_counting.py --output result_video.avi
-  * video : sudo python3yolo_object_counting.py --input 비디오 경로 --output 저장할 비디오 경로
-    * 예) sudo python3 yolo_object_counting.py --input test_video.mp4 --output result_video.avi
+* #### 이미지를 저장하지 않을 경우
+  * sudo python3 object_detection_image.py --input 이미지 경로
+    * 예) sudo python3 object_detection_image.py --input ./test_image/test_image_1.jpg
+* #### 이미지를 저장할 경우
+  * sudo python3 object_detection_image.py --input 이미지 경로 --output 저장할 이미지 경로
+    * 예) sudo python3 object_detection_image.py --input ./test_image/test_image_1.jpg --output ./result_image/result_image_1.jpg
+
+<div>
+  <p align="center">
+    <img width="300" src="face_image.jpg"> 
+    <img width="300" src="result_face_image.jpg">
+  </p>
+</div>
 ---
