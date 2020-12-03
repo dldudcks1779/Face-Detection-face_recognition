@@ -4,8 +4,8 @@
   </p>
 </div>
 
-## face_recognition 모듈
-* #### 파이썬 얼굴 인식 모듈
+## face_recognition
+* #### 파이썬 얼굴 인식 라이브러리
 ---
 ### 실행 환경
 * #### Ubuntu
