@@ -2,13 +2,19 @@
 import numpy as np # 파이썬 행렬 수식 및 수치 계산 처리 모듈
 import cv2 # opencv 모듈
 import imutils # 파이썬 OpenCV가 제공하는 기능 중 복잡하고 사용성이 떨어지는 부분을 보완(이미지 또는 비디오 스트림 파일 처리 등)
+import argparse # 명령행 파싱(인자를 입력 받고 파싱, 예외처리 등) 모듈
 import face_recognition # 얼굴 특성 정보 추출(얼굴 인식) 모듈
 
-# 이미지 파일
-image_path = "./face_image.jpg"
+# 실행을 할 때 인자값 추가
+ap = argparse.ArgumentParser() # 인자값을 받을 인스턴스 생성
+# 입력받을 인자값 등록
+ap.add_argument("-i", "--input", required=True, help="input 이미지 경로")
+ap.add_argument("-o", "--output", type=str, help="output 이미지 경로") # 이미지 저장 경로
+# 입력받은 인자값을 args에 저장
+args = vars(ap.parse_args())
 
-# 저장할 이미지 파일
-result_path = "result_face_image.jpg"
+# 이미지 파일
+image_path = args["input"]
 
 # 이미지 읽기
 face_image = cv2.imread(image_path)
@@ -32,7 +38,8 @@ for face_location in face_locations:
     number = number + 1 # 얼굴 번호 증가
 
 # 이미지 저장
-cv2.imwrite(result_path, face_image) # 파일로 저장, 포맷은 확장자에 따름
+if args["output"] !=  None: # output 이미지 경로를 입력하였을 때(입력하지 않은 경우 저장되지 않음)
+    cv2.imwrite(args["output"], face_image) # 파일로 저장, 포맷은 확장자에 따름
 
 # 이미지 show
 cv2.imshow("Face Recognition", face_image)
