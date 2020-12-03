@@ -6,6 +6,7 @@
 
 ## face_recognition
 * #### 파이썬 얼굴 인식 라이브러리
+
 ---
 ### 실행 환경
 * #### Ubuntu
@@ -15,6 +16,7 @@
   * ##### 설치 : sudo pip3 install imutils
 * #### face_recognition
   * ##### 설치 : sudo pip3 install face_recognition
+  
 ---
 ## 이미지 얼굴 인식
 * #### 이미지를 저장하지 않을 경우
@@ -32,7 +34,6 @@
 </div>
 
 ---
-
 ## 비디오 얼굴 인식 - 웹캠 또는 동영상(webcam or video)
 * #### 비디오를 저장하지 않을 경우
   * webcam : sudo python3 face_recognition_video.py
